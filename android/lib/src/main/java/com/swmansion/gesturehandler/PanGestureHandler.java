@@ -225,7 +225,7 @@ public class PanGestureHandler extends GestureHandler<PanGestureHandler> {
       mLastY = GestureUtils.getLastPointerY(event, mAverageTouches);
     }
 
-    if (state == STATE_UNDETERMINED && event.getPointerCount() >= mMinPointers) {
+    if (state == STATE_UNDETERMINED && event.getPointerCount() >= mMinPointers && action == MotionEvent.ACTION_MOVE) {
       mStartX = mLastX;
       mStartY = mLastY;
       mOffsetX = 0;
